@@ -1,0 +1,22 @@
+[include]
+	path = ~/.gitconfig_local
+[pretty]
+	concise = %C(yellow)%h%C(reset) %s (%an, %ar) %C(bold blue)%d%C(reset)
+[alias]
+	s = status
+	l = log --pretty=concise -n 20
+	lg = log --pretty=concise -n 20 --graph --all
+	ci = commit
+	co = checkout
+	amend = commit --amend -C HEAD
+	tidy = rebase -i @{upstream}
+[advice]
+	pushNonFastForward = false
+[push]
+	default = upstream
+[color]
+	ui = auto
+[core]
+	excludesfile = ~/.gitignore_global
+[pull]
+	rebase = preserve

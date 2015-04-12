@@ -1,0 +1,20 @@
+# OS X
+.DS_Store
+
+# Backup files
+*~
+
+# Vim
+[._].sw[op]
+[._]*.sw[op]
+
+# Eclipse
+.project
+.settings/
+.classpath
+.springbeans
+*.launch
+
+# IntelliJ IDEA
+.idea/
+*.iml

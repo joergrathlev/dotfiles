@@ -1,0 +1,8 @@
+--sort-files
+
+# Ignore build target directories
+--ignore-dir=target
+
+# Igone IntelliJ & Eclipse directories
+--ignore-dir=.idea
+--ignore-dir=.settings
