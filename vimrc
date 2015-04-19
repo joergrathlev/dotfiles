@@ -18,7 +18,6 @@ set expandtab
 
 " Automatically indent the next line
 set autoindent
-set smartindent
 
 " Indent by 4 spaces
 set softtabstop=4
