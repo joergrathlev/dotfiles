@@ -19,12 +19,21 @@ set expandtab
 " Automatically indent the next line
 set autoindent
 
+" Tab at beginning of line inserts based on indentation width, not tab size
+set smarttab
+
 " Indent by 4 spaces
 set softtabstop=4
 set shiftwidth=4
 
-" See http://vimdoc.sourceforge.net/htmldoc/change.html#fo-table
-set formatoptions=tcroq
+" Backspace works everywhere
+set backspace=indent,eol,start
+
+" Use incremental search
+set incsearch
+
+" See :help fo-table
+set formatoptions=tcrqj
 
 " Format a paragraph of text
 nnoremap Q gqap
@@ -41,6 +50,21 @@ set cursorline
 " Show line and column numbers
 set ruler
 set number
+
+" Always show a status line
+set laststatus=2
+
+" Show menu if there are multiple completions
+set wildmenu
+
+" Show as much as possible of last line if it doesn't fit
+set display+=lastline
+
+" Automatically read files when changed outside of vim
+set autoread
+
+" History size
+set history=200
 
 " Recognize .md as Markdown
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
