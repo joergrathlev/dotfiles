@@ -18,6 +18,7 @@ fi
 alias l='ls'
 alias la='ls -A'
 alias ll='ls -lA'
+alias vi='vim'
 alias grep='grep --color=auto'
 alias dstore-cleanup='find . -type f -name .DS_Store -delete'
 alias mvnd='MAVEN_OPTS="$MAVEN_OPTS -agentlib:jdwp=transport=dt_socket,server=y,address=9186" mvn'
