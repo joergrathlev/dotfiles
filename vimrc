@@ -33,7 +33,10 @@ set backspace=indent,eol,start
 set incsearch
 
 " See :help fo-table
-set formatoptions=tcrqj
+set formatoptions=tcrq
+if v:version > 703 || v:version == 703 && has("patch541")
+  set formatoptions+=j " Delete comment character when joining commented lines
+endif
 
 " Format a paragraph of text
 nnoremap Q gqap
