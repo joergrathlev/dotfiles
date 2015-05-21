@@ -72,6 +72,9 @@ set history=200
 " Recognize .md as Markdown
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
+" Use the vim-ansible plugin for all yaml files
+autocmd BufNewFile,BufRead *.yml set filetype=ansible
+
 " Customize the look
 if has("gui")
   " No tearoff menu items (t), no toolbar (T)
