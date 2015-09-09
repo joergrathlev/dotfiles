@@ -10,6 +10,11 @@ if [ -z "$JAVA_HOME" -a -x "/usr/libexec/java_home" ]; then
     export JAVA_HOME=$(/usr/libexec/java_home)
 fi
 
+# Set GOPATH
+if [ -d "$HOME/Development/go" ]; then
+    export GOPATH="$HOME/Development/go"
+fi
+
 # Environment settings
 export LC_MESSAGES=en_US.UTF-8
 export EDITOR=vim
