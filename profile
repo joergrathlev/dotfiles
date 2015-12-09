@@ -20,9 +20,9 @@ export LC_MESSAGES=en_US.UTF-8
 export EDITOR=vim
 export MAVEN_OPTS="-Xmx3G"
 
-# Export Docker settings if boot2docker is running
-if [ -x "/usr/local/bin/boot2docker" -a "$(/usr/local/bin/boot2docker status)" = "running" ]; then
-    eval $(/usr/local/bin/boot2docker shellinit 2> /dev/null)
+# Export Docker settings if docker-machine is running
+if [ -x "/usr/local/bin/docker-machine" -a "$(/usr/local/bin/docker-machine status dev)" = "Running" ]; then
+    eval "$(docker-machine env dev)"
 fi
 
 # If a local .profile exists, source it
