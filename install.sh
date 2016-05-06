@@ -10,5 +10,6 @@ ln -f -s "$DIR"/gitconfig ~/.gitconfig
 ln -f -s "$DIR"/gitignore_global ~/.gitignore_global
 ln -f -s "$DIR"/inputrc ~/.inputrc
 ln -f -s "$DIR"/profile ~/.profile
+ln -f -s "$DIR"/psqlrc ~/.psqlrc
 ln -f -s "$DIR"/vimrc ~/.vimrc
 ln -f -s "$DIR"/vim ~/.vim

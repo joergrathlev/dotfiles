@@ -1,0 +1,6 @@
+\set ON_ERROR_ROLLBACK interactive
+\x auto
+\set HISTCONTROL ignoreboth
+\set PROMPT1 '%M/%/%R%# '
+\set PROMPT2 '[more]%R%# '
+\pset null '(null)'
