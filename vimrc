@@ -10,6 +10,9 @@ filetype plugin indent on
 " Use UTF-8 encoding
 set encoding=UTF-8
 
+" Use comma as the leader key
+let mapleader = ","
+
 " Use UNIX line endings for new files, detect all line endings
 set fileformats=unix,dos,mac
 
@@ -32,13 +35,23 @@ set backspace=indent,eol,start
 " Use incremental search
 set incsearch
 
+" Highlight search results
+set hlsearch
+
+" Clear search results
+nnoremap <leader><space> :nohlsearch<cr>
+
+" Smart case-sensitive search
+set ignorecase
+set smartcase
+
 " See :help fo-table
 set formatoptions=tcrq
 if v:version > 703 || v:version == 703 && has("patch541")
   set formatoptions+=j " Delete comment character when joining commented lines
 endif
 
-" Format a paragraph of text
+" Format a paragraph of text (Q normally enters Ex mode)
 nnoremap Q gqap
 
 " No double spaces after punctuation when joining lines
@@ -54,6 +67,13 @@ set cursorline
 set ruler
 set number
 
+" Show the current mode and the command
+set showmode
+set showcmd
+
+" Highlight matching parentheses
+set showmatch
+
 " Always show a status line
 set laststatus=2
 
@@ -63,11 +83,17 @@ set wildmenu
 " Show as much as possible of last line if it doesn't fit
 set display+=lastline
 
+" Scroll before hitting the edge
+set scrolloff=2
+
 " Automatically read files when changed outside of vim
 set autoread
 
 " History size
 set history=200
+
+" Assume a fast connection
+set ttyfast
 
 " Recognize .md as Markdown
 autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
