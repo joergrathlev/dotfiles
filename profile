@@ -3,6 +3,7 @@
 # For homebrew, make sure /usr/local/bin is in front of PATH
 if [ -d /usr/local/bin ]; then
     export PATH="/usr/local/bin:$PATH"
+    export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
 fi
 
 # Set JAVA_HOME
