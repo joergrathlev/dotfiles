@@ -16,6 +16,11 @@ if [ -d "$HOME/Development/go" ]; then
     export GOPATH="$HOME/Development/go"
 fi
 
+# Enable rbenv
+if [ -x "/usr/local/bin/rbenv" ]; then
+    eval "$(/usr/local/bin/rbenv init -)"
+fi
+
 # Environment settings
 export LC_MESSAGES=en_US.UTF-8
 export EDITOR=vim
