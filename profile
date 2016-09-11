@@ -27,11 +27,6 @@ export EDITOR=vim
 export MAVEN_OPTS="-Xmx3G"
 export HOMEBREW_NO_ANALYTICS=1
 
-# Export Docker settings if docker-machine is running
-if [ -x "/usr/local/bin/docker-machine" -a "$(/usr/local/bin/docker-machine status dev)" = "Running" ]; then
-    eval "$(docker-machine env dev)"
-fi
-
 # If a local .profile exists, source it
 if [ -r ~/.profile_local ]; then
     . ~/.profile_local
