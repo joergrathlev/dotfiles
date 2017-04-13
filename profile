@@ -31,3 +31,8 @@ export HOMEBREW_NO_ANALYTICS=1
 if [ -r ~/.profile_local ]; then
     . ~/.profile_local
 fi
+
+# Add Cargo to the PATH
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
