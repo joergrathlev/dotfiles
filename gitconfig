@@ -10,6 +10,11 @@
 	co = checkout
 	amend = commit --amend -C HEAD
 	tidy = rebase -i @{upstream}
+	recent = for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(HEAD)%(refname:short) %(color:dim)(%(authorname), %(creatordate:relative))%(color:reset)'
+	recap = !git log -n20 --all --pretty=concise --no-merges --author=$(git config --get user.email)
+	behind = log --pretty=concise HEAD..@{upstream}
+	ahead = log --pretty=concise @{upstream}..HEAD
+	root = rev-parse --show-toplevel
 [advice]
 	pushNonFastForward = false
 [push]
