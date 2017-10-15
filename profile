@@ -21,6 +21,11 @@ if [ -x "/usr/local/bin/rbenv" ]; then
     eval "$(/usr/local/bin/rbenv init -)"
 fi
 
+# Add Cargo to the PATH
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
 # Environment settings
 export LC_MESSAGES=en_US.UTF-8
 export EDITOR=vim
@@ -30,9 +35,4 @@ export HOMEBREW_NO_ANALYTICS=1
 # If a local .profile exists, source it
 if [ -r ~/.profile_local ]; then
     . ~/.profile_local
-fi
-
-# Add Cargo to the PATH
-if [ -d "$HOME/.cargo/bin" ]; then
-    export PATH="$HOME/.cargo/bin:$PATH"
 fi
