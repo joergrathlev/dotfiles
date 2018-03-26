@@ -15,6 +15,7 @@
 	behind = log --pretty=concise HEAD..@{upstream}
 	ahead = log --pretty=concise @{upstream}..HEAD
 	root = rev-parse --show-toplevel
+        start = !git init && git commit --allow-empty -m 'Initial commit'
 [advice]
 	pushNonFastForward = false
 [push]
