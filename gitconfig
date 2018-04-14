@@ -4,18 +4,24 @@
 	concise = %C(yellow)%h%C(reset) %s (%an, %ar) %C(bold blue)%d%C(reset)
 [alias]
 	s = status
-	l = log --pretty=concise -n 20
-	lg = log --pretty=concise -n 20 --graph --all
 	ci = commit
 	co = checkout
 	amend = commit --amend -C HEAD
 	tidy = rebase -i @{upstream}
-	recent = for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(HEAD)%(refname:short) %(color:dim)(%(authorname), %(creatordate:relative))%(color:reset)'
-	recap = !git log -n20 --all --pretty=concise --no-merges --author=$(git config --get user.email)
+
+	# l = log recent commits, current branch
+	# la = log recent commits, all branches
+	# lf = log full history, current branch
+	# laf = log full history, all branches
+	# recent = local branches ordered by most recent commits
+	l = log -n20 --graph --pretty=concise
+	la = log -n20 --all --graph --pretty=concise
+	lf = log --graph --pretty=concise
+	laf = log --all --graph --pretty=concise
+	recent = for-each-ref --count=5 --sort=-committerdate --format='%(HEAD) %(color:bold blue)%(refname:short)%(color:reset) %(subject) (%(authorname), %(creatordate:relative))' refs/heads/
 	behind = log --pretty=concise HEAD..@{upstream}
 	ahead = log --pretty=concise @{upstream}..HEAD
-	root = rev-parse --show-toplevel
-        start = !git init && git commit --allow-empty -m 'Initial commit'
+    start = !git init && git commit --allow-empty -m 'Initial commit'
 [advice]
 	pushNonFastForward = false
 [push]
@@ -30,7 +36,6 @@
 	compactionHeuristic = true
 [pager]
 	show = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
-	log = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
 	diff = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
 [interactive]
 	diffFilter = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
