@@ -21,6 +21,11 @@ if [ -x "/usr/local/bin/rbenv" ]; then
     eval "$(/usr/local/bin/rbenv init -)"
 fi
 
+# Enable pyenv
+if command -v pyenv >/dev/null; then
+    eval "$(pyenv init -)"
+fi
+
 # Add Cargo to the PATH
 if [ -d "$HOME/.cargo/bin" ]; then
     export PATH="$HOME/.cargo/bin:$PATH"
