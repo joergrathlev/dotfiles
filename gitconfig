@@ -21,7 +21,7 @@
 	recent = for-each-ref --count=5 --sort=-committerdate --format='%(HEAD) %(color:bold blue)%(refname:short)%(color:reset) %(subject) (%(authorname), %(creatordate:relative))' refs/heads/
 	behind = log --pretty=concise HEAD..@{upstream}
 	ahead = log --pretty=concise @{upstream}..HEAD
-    start = !git init && git commit --allow-empty -m 'Initial commit'
+	start = !git init && git commit --allow-empty -m 'Initial commit'
 [advice]
 	pushNonFastForward = false
 [push]
