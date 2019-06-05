@@ -1,6 +1,9 @@
 " Use Vim defaults, not vi defaults
 set nocompatible
 
+" Security
+set nomodeline
+
 " Use Pathogen to manage plugins
 execute pathogen#infect()
 
