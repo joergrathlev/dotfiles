@@ -74,13 +74,16 @@ fi
 # ===============
 
 # Create a directory and change into it
-function mkcd() {
+mkcd() {
     [ -n "$1" ] && mkdir -p "$1" && cd "$1"
 }
 
 # Run a command with a different JAVA_HOME
-function jv() {
-    if [ "$#" -lt "2" ]; then
+jv() {
+    if [ "$#" -eq "0" ]; then
+        /usr/libexec/java_home -V
+        return 0
+    elif [ "$#" -lt "2" ]; then
         echo "Usage: jv <version> <command>" >&2
         return 1
     fi
@@ -95,7 +98,7 @@ function jv() {
 
 # Colorized man pages
 # from Lemont Washington https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
-function man() {
+man() {
     env \
         LESS_TERMCAP_mb=$(printf "\e[1;31m") \
        	LESS_TERMCAP_md=$(printf "\e[1;31m") \
