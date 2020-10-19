@@ -87,7 +87,7 @@ jv() {
         echo "Usage: jv <version> <command>" >&2
         return 1
     fi
-    local JAVA_HOME
+    local -x JAVA_HOME
     JAVA_HOME=$(/usr/libexec/java_home -v "$1")
     if [ "$?" -ne "0" ]; then
         return 1
