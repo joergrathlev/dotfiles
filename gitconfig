@@ -28,8 +28,6 @@
 	default = upstream
 [color]
 	ui = auto
-[core]
-	excludesfile = ~/.gitignore_global
 [pull]
 	rebase = merges
 [diff]

@@ -7,7 +7,7 @@ ln -f -s "$DIR"/ackrc ~/.ackrc
 ln -f -s "$DIR"/bash_profile ~/.bash_profile
 ln -f -s "$DIR"/bashrc ~/.bashrc
 ln -f -s "$DIR"/gitconfig ~/.gitconfig
-ln -f -s "$DIR"/gitignore_global ~/.gitignore_global
+ln -f -s "$DIR"/gitignore_global ~/.config/git/ignore
 ln -f -s "$DIR"/inputrc ~/.inputrc
 ln -f -s "$DIR"/profile ~/.profile
 ln -f -s "$DIR"/psqlrc ~/.psqlrc
