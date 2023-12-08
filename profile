@@ -1,9 +1,8 @@
 # Initialization file for login shells
 
 # For homebrew, make sure /usr/local/bin is in front of PATH
-if [ -d /usr/local/bin ]; then
-    export PATH="/usr/local/bin:$PATH"
-    export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/lib"
+if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
 # Set JAVA_HOME

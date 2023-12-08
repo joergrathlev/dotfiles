@@ -64,6 +64,8 @@ if [[ -f "/usr/local/etc/bash_completion" ]]; then
 elif [[ -f /etc/bash_completion ]]; then
     . /etc/bash_completion
 fi
+[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+[[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
 
 if [[ -f "/usr/local/bin/aws_completer" ]]; then
     complete -C "/usr/local/bin/aws_completer" aws
