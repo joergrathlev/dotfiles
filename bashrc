@@ -115,6 +115,11 @@ man() {
         man "$@"
 }
 
+# Interactive jq
+fjq() {
+    echo '' | fzf --print-query --preview "cat \"$1\" | jq {q}"
+}
+
 
 # Shell prompt
 # ============
