@@ -30,6 +30,7 @@ alias xml='tidy -xml -quiet -indent'
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote(sys.argv[1]);"'
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote(sys.argv[1]);"'
 alias hgrep='history|grep'
+alias aws-login='export AWS_PROFILE=$(aws configure list-profiles | fzf --prompt "Choose active AWS profile:") && aws sso login'
 
 
 # Bash configuration
