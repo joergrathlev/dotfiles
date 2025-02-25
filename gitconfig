@@ -26,6 +26,7 @@
 	pushNonFastForward = false
 [push]
 	default = upstream
+	autoSetupRemote = true
 [color]
 	ui = auto
 [pull]
@@ -38,3 +39,10 @@
 	diff = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
 [interactive]
 	diffFilter = $(brew --prefix git)/share/git-core/contrib/diff-highlight/diff-highlight | less
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential]
+	helper = osxkeychain
