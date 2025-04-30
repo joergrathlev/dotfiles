@@ -102,6 +102,12 @@ jv() {
     "$@"
 }
 
+aws-docker-login() {
+    local account=$(aws configure get sso_account_id)
+    local region=$(aws configure get region)
+    aws ecr get-login-password --region "${region}" | docker login --username AWS --password-stdin "${account}.dkr.ecr.${region}.amazonaws.com"
+}
+
 # Colorized man pages
 # from Lemont Washington https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
 man() {
