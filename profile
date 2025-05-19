@@ -37,6 +37,11 @@ export LANG=en_US.UTF-8
 export EDITOR=vim
 export MAVEN_OPTS="-Xmx3G"
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_EMOJI=1
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_NO_INSTALL_UPGRADE=1
+export HOMEBREW_NO_UPDATE_REPORT_NEW=1
 
 # If a local .profile exists, source it
 if [ -r ~/.profile_local ]; then
