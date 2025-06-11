@@ -31,8 +31,6 @@ if [ -d "$HOME/.cargo/bin" ]; then
 fi
 
 # Environment settings
-export LC_MESSAGES=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export EDITOR=vim
 export MAVEN_OPTS="-Xmx3G"
