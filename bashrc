@@ -36,11 +36,12 @@ alias aws-login='export AWS_PROFILE=$(aws configure list-profiles | fzf --prompt
 # ==================
 
 # Shell history
-HISTCONTROL=ignorespace:ignoredups
-HISTFILESIZE=1000
-HISTSIZE=1000
+HISTCONTROL=ignoreboth
+HISTFILESIZE=10000
+HISTSIZE=10000
 HISTIGNORE='exit:logout'
 HISTTIMEFORMAT='%Y-%m-%dT%H:%M:%S '
+PROMPT_COMMAND="${PROMPT_COMMAND:+${PROMPT_COMMAND};}history -a"
 
 # Append to the history file, don't overwrite it
 shopt -s histappend
