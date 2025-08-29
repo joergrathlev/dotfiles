@@ -29,7 +29,6 @@ alias tidy-xml='tidy -xml -quiet -indent'
 alias urlencode='python3 -c "import sys, urllib.parse; print(urllib.parse.quote(sys.argv[1] if len(sys.argv) > 1 else sys.stdin.read().strip()))"'
 alias urldecode='python3 -c "import sys, urllib.parse; print(urllib.parse.unquote(sys.argv[1] if len(sys.argv) > 1 else sys.stdin.read().strip()))"'
 alias histgrep='history|grep'
-alias aws-login='export AWS_PROFILE=$(aws configure list-profiles | fzf --prompt "Choose active AWS profile:") && aws sso login'
 
 
 # Bash configuration
@@ -100,6 +99,14 @@ jv() {
     fi
     shift
     "$@"
+}
+
+aws-login() {
+    local profile=$(aws configure list-profiles | fzf --prompt "Choose active AWS profile:")
+    if [[ -n "$profile" ]]; then
+        export AWS_PROFILE="$profile"
+        aws sso login
+    fi
 }
 
 aws-docker-login() {
