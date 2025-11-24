@@ -134,6 +134,14 @@ fjq() {
     echo '' | fzf --print-query --preview "cat \"$1\" | jq {q}"
 }
 
+# cd up into the project root
+cdr() {
+    local project_root=$(git rev-parse --show-toplevel)
+    if [[ -n "$project_root" ]]; then
+        cd "$project_root"
+    fi
+}
+
 
 # Shell prompt
 # ============
