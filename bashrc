@@ -71,9 +71,6 @@ if [[ -f "/usr/local/bin/aws_completer" ]]; then
     complete -C "/usr/local/bin/aws_completer" aws
 fi
 
-# CDPATH
-CDPATH=.:$HOME/Development/projects
-
 
 # Shell functions
 # ===============
