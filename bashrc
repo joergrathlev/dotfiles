@@ -112,6 +112,14 @@ aws-docker-login() {
     aws ecr get-login-password --region "${region}" | docker login --username AWS --password-stdin "${account}.dkr.ecr.${region}.amazonaws.com"
 }
 
+aws-whoami() {
+  caller_identity=$(aws sts get-caller-identity --output json)
+  expiration=$(aws configure export-credentials --output json | jq -r '.Expiration')
+  remaining=$(python3 -c "from datetime import datetime, UTC; exp=datetime.fromisoformat('$expiration'); r=exp-datetime.now(UTC); print(f'{r}')")
+  jq --arg remaining "$remaining" '. + {remaining: $remaining}' <<< "$caller_identity"
+}
+
+
 # Colorized man pages
 # from Lemont Washington https://gist.github.com/cocoalabs/2fb7dc2199b0d4bf160364b8e557eb66
 man() {
