@@ -113,10 +113,13 @@ aws-docker-login() {
 }
 
 aws-whoami() {
-  caller_identity=$(aws sts get-caller-identity --output json)
-  expiration=$(aws configure export-credentials --output json | jq -r '.Expiration')
-  remaining=$(python3 -c "from datetime import datetime, UTC; exp=datetime.fromisoformat('$expiration'); r=exp-datetime.now(UTC); print(f'{r}')")
-  jq --arg remaining "$remaining" '. + {remaining: $remaining}' <<< "$caller_identity"
+    caller_identity=$(aws sts get-caller-identity --output json)
+    if [[ "$?" -ne 0 ]]; then
+        return
+    fi
+    expiration=$(aws configure export-credentials --output json | jq -r '.Expiration')
+    remaining=$(python3 -c "from datetime import datetime, UTC; exp=datetime.fromisoformat('$expiration'); r=exp-datetime.now(UTC); print(f'{r}')")
+    jq --arg remaining "$remaining" '. + {remaining: $remaining}' <<< "$caller_identity"
 }
 
 
