@@ -30,6 +30,11 @@ if [ -d "$HOME/.cargo/bin" ]; then
     export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# Enable asdf
+if [ -d ${ASDF_DATA_DIR:-$HOME/.asdf}/shims ]; then
+    export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+fi
+
 # Environment settings
 export LANG=en_US.UTF-8
 export EDITOR=vim
