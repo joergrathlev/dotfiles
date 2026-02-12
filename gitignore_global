@@ -19,3 +19,6 @@
 .idea/
 *.iml
 .vscode/
+
+# Mise
+mise.local.toml
