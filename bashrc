@@ -184,6 +184,14 @@ PS1="${WINDOW_TITLE}${COL_BLUE}${PROMPT_ERR_COLOR}${PROMPT_HOSTNAME}\w${PROMPT_G
 unset COL_RED COL_BLUE COL_OFF PROMPT_HOSTNAME PROMPT_GIT PROMPT_ERR_COLOR WINDOW_TITLE
 
 
+# Mise-en-place
+# =============
+
+if command -v mise; then
+    eval "$(mise activate bash)"
+fi
+
+
 # Misc
 # ====
 
