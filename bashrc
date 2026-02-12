@@ -187,7 +187,7 @@ unset COL_RED COL_BLUE COL_OFF PROMPT_HOSTNAME PROMPT_GIT PROMPT_ERR_COLOR WINDO
 # Mise-en-place
 # =============
 
-if command -v mise; then
+if command -v mise >/dev/null; then
     eval "$(mise activate bash)"
 fi
 
