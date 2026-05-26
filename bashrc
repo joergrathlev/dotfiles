@@ -30,6 +30,10 @@ alias urlencode='python3 -c "import sys, urllib.parse; print(urllib.parse.quote(
 alias urldecode='python3 -c "import sys, urllib.parse; print(urllib.parse.unquote(sys.argv[1] if len(sys.argv) > 1 else sys.stdin.read().strip()))"'
 alias histgrep='history|grep'
 
+# Path
+# ====
+
+PATH=${PATH}:${HOME}/.local/bin
 
 # Bash configuration
 # ==================
