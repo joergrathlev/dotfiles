@@ -23,3 +23,7 @@
 # Mise
 mise.local.toml
 .tool-versions
+
+# Do not ignore .github/. Included here mainly because this stops ripgrep from
+# ignoring the directory.
+!/.github/
