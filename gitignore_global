@@ -27,6 +27,5 @@ mise.local.toml
 # Claude Code
 .claude/settings.local.json
 
-# Do not ignore .github/. Included here mainly because this stops ripgrep from
-# ignoring the directory.
+# included so that ripgrep doesn't ignore .github/
 !/.github/
