@@ -151,6 +151,8 @@ cdr() {
     local project_root=$(git rev-parse --show-toplevel)
     if [[ -n "$project_root" ]]; then
         cd "$project_root"
+    else
+        return 1
     fi
 }
 
