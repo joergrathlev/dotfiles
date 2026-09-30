@@ -75,6 +75,10 @@ if [[ -f "/usr/local/bin/aws_completer" ]]; then
     complete -C "/usr/local/bin/aws_completer" aws
 fi
 
+if command -v sbx; then
+    source <(sbx completion bash)
+fi
+
 
 # Shell functions
 # ===============
